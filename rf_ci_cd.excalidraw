@@ -1,0 +1,9 @@
+graph TD
+    A(Trigger: Schedule) --> B(Build: Code Compilation & Dependency Management)
+    B --> U(Upgrade Stage: Upgrade Device)
+    U --> C{Weekday or Weekend?}
+    C --> D[Weekday Flow: Run Optimized Test Suite]
+    C --> E[Weekend Flow: Run Full Test Suite]
+    D --> F[Analysis: Collect Test Results and push to InfluxDB]
+    E --> F[Analysis: Collect Test Results and push to InfluxDB]
+    F --> G[Feedback: Report Generation in Grafana]
