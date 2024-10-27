@@ -6,7 +6,7 @@ client = InfluxDBClient(host='localhost', port=0000, username='user', password='
 query = """
 SELECT build_number, rf_failed, rf_name, rf_passed, rf_suite_name
 FROM testcase_point
-WHERE project_name='ETSc2-Robot-Tests' AND time > now() - 120d
+WHERE project_name='Project-Robot-Tests' AND time > now() - 120d
 """
 
 result = client.query(query)
